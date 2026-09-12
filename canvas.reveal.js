@@ -129,7 +129,7 @@
     var contentMaxX = 1;
 
     function syncCanvasSize() {
-      var dpr = Math.min(window.devicePixelRatio || 1,  emulation=1);
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
       var width = Math.max(1, Math.round(output.clientWidth * dpr));
       var height = Math.max(1, Math.round(output.clientHeight * dpr));
       if (output.width !== width || output.height !== height) {
@@ -196,7 +196,7 @@
       gl.uniform1f(uniforms.uMaxX, contentMaxX);
       gl.uniform1f(uniforms.uCrisp, reducedMotion || !htmlInCanvas ? 1 : 0);
       gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-      gl.viewport(0,0, output.width, output.height);
+      gl.viewport(0, 0, output.width, output.height);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     }
 
